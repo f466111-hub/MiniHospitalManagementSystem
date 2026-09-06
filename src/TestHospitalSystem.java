@@ -154,5 +154,16 @@ public class TestHospitalSystem {
         System.out.println("\n======================================");
         System.out.println("       ALL TESTS COMPLETED");
         System.out.println("======================================");
+
+        System.out.println("\n--- Empty Structure Test ---");
+
+        EmergencyQueue emptyQueue = new EmergencyQueue();
+        emptyQueue.dequeue();
+
+        TreatmentStack emptyStack = new TreatmentStack();
+        emptyStack.pop();
+
+        VisitLinkedList emptyVisits = new VisitLinkedList();
+        emptyVisits.displayVisitHistory();
     }
 }
