@@ -16,7 +16,6 @@ public class EmergencyQueue {
     private QueueNode rear;
     private int size;
 
-    // Constructor
     public EmergencyQueue() {
         front = null;
         rear = null;
@@ -27,7 +26,6 @@ public class EmergencyQueue {
 
         QueueNode newNode = new QueueNode(patient);
 
-        // If queue is empty
         if (rear == null) {
             front = newNode;
             rear = newNode;
@@ -46,7 +44,6 @@ public class EmergencyQueue {
 
     public Patient dequeue() {
 
-        // Check if queue is empty
         if (front == null) {
             System.out.println("Emergency queue is empty.");
             return null;
@@ -56,7 +53,6 @@ public class EmergencyQueue {
 
         front = front.next;
 
-        // If queue becomes empty
         if (front == null) {
             rear = null;
         }
@@ -91,9 +87,19 @@ public class EmergencyQueue {
         QueueNode current = front;
 
         System.out.println("\n========== EMERGENCY QUEUE ==========");
-        System.out.printf("%-5s %-12s %-20s %-8s %-20s%n",
-                "No.", "Patient ID", "Name", "Age", "Condition");
-        System.out.println("---------------------------------------------------------------");
+
+        System.out.printf(
+                "%-5s %-12s %-20s %-8s %-20s%n",
+                "No.",
+                "Patient ID",
+                "Name",
+                "Age",
+                "Condition"
+        );
+
+        System.out.println(
+                "---------------------------------------------------------------"
+        );
 
         int number = 1;
 
@@ -101,18 +107,23 @@ public class EmergencyQueue {
 
             Patient patient = current.patient;
 
-            System.out.printf("%-5d %-12d %-20s %-8d %-20s%n",
+            System.out.printf(
+                    "%-5d %-12d %-20s %-8d %-20s%n",
                     number,
                     patient.getPatientId(),
                     patient.getPatientName(),
                     patient.getAge(),
-                    patient.getMedicalCondition());
+                    patient.getMedicalCondition()
+            );
 
             current = current.next;
             number++;
         }
 
-        System.out.println("---------------------------------------------------------------");
+        System.out.println(
+                "---------------------------------------------------------------"
+        );
+
         System.out.println("Patients waiting: " + size);
     }
 
