@@ -1,4 +1,3 @@
-
 public class PatientBST {
 
     private class Node {

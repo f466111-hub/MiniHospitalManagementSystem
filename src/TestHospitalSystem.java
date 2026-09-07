@@ -102,11 +102,8 @@ public class TestHospitalSystem {
         TreatmentRecord latestTreatment
                 = hospital.removeLatestTreatment();
 
-        if (latestTreatment != null) {
-            System.out.println(
-                    "Removed treatment ID: "
-                    + latestTreatment.getTreatmentId()
-            );
+        if (latestTreatment != null) { System.out.println("Removed treatment ID: " + latestTreatment.getTreatmentId()
+        );
         }
 
         System.out.println("\n--- Linked List Test ---");
@@ -137,12 +134,9 @@ public class TestHospitalSystem {
         Visit foundVisit = hospital.searchVisit(1001, 702);
 
         if (foundVisit != null) {
-            System.out.println(
-                    "Visit found: "
-                    + foundVisit.getVisitId()
-            );
+                System.out.println("Visit found: " + foundVisit.getVisitId());
         } else {
-            System.out.println("Visit not found.");
+                System.out.println("Visit not found.");
         }
 
         System.out.println("\nRemoving Visit 701:");
@@ -165,5 +159,5 @@ public class TestHospitalSystem {
 
         VisitLinkedList emptyVisits = new VisitLinkedList();
         emptyVisits.displayVisitHistory();
-    }
+}
 }
